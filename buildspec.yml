@@ -6,18 +6,18 @@ phases:
       java: corretto11
   pre_build:
     commands:
-      - mvn clean
-      - mvn validate
+      - dotnet clean
+      - dotnet validate
       - echo pre_build completed on 'data'
   build:
     commands:
       - echo Build completed on 'data'
-      - mvn compile
-      - mvn test
+      - dotnet compile
+      - dotnet test
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn package
+      - mvdotnetn package
       - cp target/*.war sample-java.war
 artifacts:
   files:
