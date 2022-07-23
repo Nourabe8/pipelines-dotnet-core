@@ -17,4 +17,8 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - dotnet publish
+      - dotnet pack
+      - cp target/*.dll dotnet.dll
+artifacts:
+  files:
+    - dotnet.dll
