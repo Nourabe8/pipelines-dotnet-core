@@ -13,13 +13,8 @@ phases:
     commands:
       - echo Build completed on 'data'
       - dotnet restore
-      - dotnet build
       - dotnet test
   post_build:
     commands:
       - echo Build completed on `date`
-      - dotnet publish
-      - cp target/*.war sample-java.war
-artifacts:
-  files:
-    - sample-java.war
+      - dotnet package
