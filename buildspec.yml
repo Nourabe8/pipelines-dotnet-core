@@ -7,7 +7,6 @@ phases:
   pre_build:
     commands:
       - dotnet clean
-      - dotnet validate
       - echo pre_build completed on 'data'
   build:
     commands:
